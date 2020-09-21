@@ -48,6 +48,8 @@ $app->singleton(
     App\Console\Kernel::class
 );
 
+
+$app->register(\Knuckles\Scribe\ScribeServiceProvider::class);
 /*
 |--------------------------------------------------------------------------
 | Register Config Files
@@ -60,6 +62,7 @@ $app->singleton(
 */
 
 $app->configure('app');
+$app->configure('scribe');
 
 /*
 |--------------------------------------------------------------------------
