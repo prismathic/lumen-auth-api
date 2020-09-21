@@ -12,7 +12,7 @@ class Controller extends BaseController
         return response()->json(compact('success','status','message','data'), $status);
     }
 
-    protected function sendJsonErrorResponse($data, $message = "Internal Server Error", $status=500) {
+    protected function sendJsonErrorResponse($message = "Internal Server Error", $status=500) {
         $success = false;
         return response()->json(compact('success','status','message'), $status);
     }
