@@ -47,9 +47,6 @@ $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
     App\Console\Kernel::class
 );
-
-
-$app->register(\Knuckles\Scribe\ScribeServiceProvider::class);
 /*
 |--------------------------------------------------------------------------
 | Register Config Files
@@ -79,9 +76,9 @@ $app->configure('scribe');
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
 
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+$app->routeMiddleware([
+    'auth' => App\Http\Middleware\Authenticate::class,
+]);
 
 /*
 |--------------------------------------------------------------------------
@@ -93,9 +90,11 @@ $app->configure('scribe');
 | totally optional, so you are not required to uncomment this line.
 |
 */
-
+$app->register(\Knuckles\Scribe\ScribeServiceProvider::class);
+$app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 // $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
+$app->register(App\Providers\AuthServiceProvider::class);
+$app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
 /*
