@@ -9,7 +9,7 @@ Please check the official Lumen installation guide for server requirements befor
 
 Clone the repository
 
-    git clone https://github.com/prismathic/TestMe.git
+    git clone https://github.com/prismathic/lumen-auth-api.git
 
 Switch to the repo folder
 
