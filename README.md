@@ -1,24 +1,56 @@
-# Lumen PHP Framework
+# Lumen Auth API
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+Lumen is a basic API for user authentication and registration built with Lumen
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Installation
 
-## Official Documentation
+Please check the official Lumen installation guide for server requirements before you start. [Official Documentation](https://lumen.laravel.com/docs/8.x/installation)
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
 
-## Contributing
+Clone the repository
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    git clone https://github.com/prismathic/TestMe.git
 
-## Security Vulnerabilities
+Switch to the repo folder
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+    cd lumen-auth-api
 
-## License
+Install all the dependencies using composer
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    composer install
+
+Copy the example env file and make the required configuration changes in the .env file
+
+    cp .env.example .env
+
+Generate a new application key
+
+    php artisan key:generate
+
+Generate a new random JWT secret
+
+    php artisan jwt:secret
+
+Run the database migrations (**Set the database connection in .env before migrating**)
+
+    php artisan migrate
+
+Start the local development server
+
+    php -S localhost:8000 -t public
+
+Run `php artisan db:seed` to seed a default users into the database
+
+You can now access the API at http://localhost:8000/api/v1
+
+## Docs
+
+To access this API's documentation, open the `index.html` file in the `public/docs` directory.
+
+## Testing
+
+Run `vendor/bin/phpunit` in the project directory to run tests on the application
+
+## Cheers
+
+Have fun building :)
